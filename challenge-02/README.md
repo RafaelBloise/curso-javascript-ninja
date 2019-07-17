@@ -9,11 +9,11 @@ Nesse exercício, você está livre para escolher os nomes para suas variáveis 
 ... }
 
 // Declare uma variável que receba a invocação da função criada acima, passando dois números quaisquer por argumento, e somando `5` ao resultado retornado da função.
-> var resultado = soma(4, 6);
+> var resultado = soma(4, 6) + 5;
 
 // Qual o valor atualizado dessa variável?
 > resultado
-10
+15
 
 // Declare uma nova variável, sem valor.
 > var novaVariavel;
@@ -43,7 +43,7 @@ Crie uma função com as seguintes características:
 3. O retorno da função deve ser a multiplicação dos 3 argumentos, somando `2` ao resultado da multiplicação.
 */
 > function novaFuncao(x,y,z){
-... if(x == null  || y== null || z == null){
+... if(x === undefined  || y=== undefined  || z === undefined ){
 ..... return 'Preencha todos os parâmetros';
 ..... }
 ... else {
@@ -75,29 +75,17 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 > function newFunction(x,y,z){
-... if(x == null && y == null && z == null){
-..... return false;
-..... }
-... else if (x == null && y == null && z != null){
-..... return z;
-..... }
-... else if (x == null && z == null && y != null){
-..... return y;
-..... }
-... else if(z == null && y == null && x != null){
+... if(x !== undefined && y === undefined && z === undefined){
 ..... return x;
 ..... }
-... else if (x != null && y != null && z == null){
+... else if (x !== undefined && y !== undefined && z === undefined){
 ..... return x+y;
 ..... }
-... else if(x != null && z!= null && y==null){
-..... return x+z;
-..... }
-... else if(x == null && z != null && y != null){
-..... return y+z;
-..... }
-... else if (x != null && y != null && z != null){
+... else if (x !== undefined && y !== undefined && z !== undefined){
 ..... return (x+y) / z;
+..... }
+... else if (x === undefined && y === undefined && z === undefined){
+..... return false;
 ..... }
 ... else {
 ..... return null;
